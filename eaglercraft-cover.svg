@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Eaglercraft block-world cover</title>
+  <desc id="desc">A bright, block-built landscape with green hills, trees, and a blue sky.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#63cbe1"/>
+      <stop offset="1" stop-color="#c6eece"/>
+    </linearGradient>
+    <linearGradient id="shade" x2="0" y2="1">
+      <stop stop-color="#121b17" stop-opacity="0"/>
+      <stop offset="1" stop-color="#121b17" stop-opacity=".87"/>
+    </linearGradient>
+    <pattern id="pixels" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M0 0h48v48H0z" fill="none" stroke="#e8ffdc" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h960v540H0z"/>
+  <circle cx="752" cy="112" r="51" fill="#ffe58a"/>
+  <g fill="#f2fff0" opacity=".8">
+    <path d="M116 112h48V88h72v24h24v24h-24v24h-72v-24h-48z"/>
+    <path d="M575 184h36v-18h54v18h18v18h-18v18h-54v-18h-36z"/>
+  </g>
+  <path fill="#86c99c" d="M0 288h96v-48h96v48h48v-72h96v72h72v-48h96v48h72v-96h120v96h48v-48h72v48h48v252H0z"/>
+  <path fill="#69aa78" d="M0 360h144v-48h96v48h96v-72h144v72h96v-48h96v48h96v-72h96v72h96v180H0z"/>
+  <g>
+    <path fill="#744f39" d="M150 274h28v102h-28z"/>
+    <path fill="#28774e" d="M126 202h76v72h-76z"/>
+    <path fill="#39935a" d="M102 226h48v48h-48zM178 178h48v48h-48z"/>
+    <path fill="#744f39" d="M786 258h30v114h-30z"/>
+    <path fill="#28774e" d="M762 186h78v78h-78z"/>
+    <path fill="#39935a" d="M738 210h48v48h-48zM816 162h48v48h-48z"/>
+  </g>
+  <path fill="#548d5a" d="M0 408h192v-48h96v48h144v-24h96v24h192v-48h144v48h96v132H0z"/>
+  <path fill="#b4d977" d="M0 408h192v24H0zM288 408h144v24H288zM528 408h192v24H528zM864 408h96v24h-96z"/>
+  <path fill="#3e7854" d="M0 456h240v24H0zM336 456h192v24H336zM672 456h192v24H672z" opacity=".6"/>
+  <path fill="url(#shade)" d="M0 260h960v280H0z"/>
+  <path fill="url(#pixels)" d="M0 0h960v540H0z"/>
+  <g font-family="monospace" font-weight="700">
+    <text x="52" y="461" fill="#d7ff62" font-size="16" letter-spacing="5">BLOCK-WORLD SANDBOX</text>
+    <text x="48" y="510" fill="#f3f5e9" font-size="44" letter-spacing="1">EAGLERCRAFT</text>
+  </g>
+</svg>

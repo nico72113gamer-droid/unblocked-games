@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a16">
+  <title>Apps · Nico Unblocked Games</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    :root {
+      color-scheme: dark;
+      --ink: #171a16;
+      --panel: #20241f;
+      --line: #383e37;
+      --paper: #f3f5e9;
+      --muted: #a0a89d;
+      --lime: #d7ff62;
+      --coral: #ff765e;
+      --aqua: #73e5d1;
+      --blue: #7caaff;
+      --mono: 'DM Mono', monospace;
+      --display: 'Space Grotesk', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { min-width: 320px; min-height: 100vh; margin: 0; background: var(--ink); color: var(--paper); font-family: var(--display); }
+    button, input, select, textarea { font: inherit; }
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+    .page { width: min(1240px, 100%); margin: 0 auto; padding: 0 42px 36px; }
+    .topbar { height: 74px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--paper); text-decoration: none; font-size: 13px; font-weight: 700; }
+    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 8px; background: var(--lime); color: var(--ink); transform: rotate(-7deg); }
+    .brand-mark::after { content: ''; width: 11px; height: 11px; border: 2px solid currentColor; border-radius: 50%; }
+    .brand small { display: block; margin-top: 4px; color: var(--muted); font: 9px var(--mono); letter-spacing: 1.3px; }
+    .back-link { padding: 8px 11px; border: 1px solid #41483d; border-radius: 4px; color: var(--lime); text-decoration: none; font: 10px var(--mono); letter-spacing: 1px; }
+    .back-link:hover { border-color: var(--lime); }
+    .hero { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding: 45px 0 30px; }
+    .eyebrow { margin-bottom: 11px; color: var(--coral); font: 10px var(--mono); letter-spacing: 1.6px; }
+    h1 { margin: 0; font-size: clamp(32px, 5vw, 52px); line-height: 1.03; font-weight: 600; }
+    .hero-note { max-width: 245px; color: var(--muted); font: 11px var(--mono); line-height: 1.8; text-align: right; }
+    .app-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .app { min-width: 0; min-height: 365px; display: flex; flex-direction: column; padding: 19px; border: 1px solid #3b4239; border-radius: 6px; background: var(--panel); }
+    .webretro { overflow: hidden; padding: 0; color: inherit; text-decoration: none; transition: transform .18s, border-color .18s; }
+    .webretro:hover { transform: translateY(-3px); border-color: var(--blue); }
+    .webretro .app-icon { background: #7caaff20; color: var(--blue); }
+    .soundboard .app-icon { background: #ff765e20; color: var(--coral); }
+    .webretro .app-head { margin: 19px 19px 0; }
+    .retro-cover { min-height: 0; flex: 1; overflow: hidden; margin: 15px 19px 0; border-radius: 4px; background: #252b25; }
+    .retro-cover img { display: block; width: 100%; height: 100%; min-height: 150px; object-fit: cover; }
+    .retro-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 19px 18px; }
+    .retro-foot strong { display: block; font-size: 12px; }
+    .retro-foot small { display: block; margin-top: 5px; color: #9fa79b; font: 9px var(--mono); }
+    .retro-launch { color: var(--blue); font: 10px var(--mono); white-space: nowrap; }
+    .app-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 16px; border-bottom: 1px solid #343a32; }
+    .app-title { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; }
+    .app-icon { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 6px; font-size: 16px; }
+    .calculator .app-icon { background: #d7ff6220; color: var(--lime); }
+    .timer .app-icon { background: #73e5d120; color: var(--aqua); }
+    .notes .app-icon { background: #ff765e20; color: var(--coral); }
+    .app-kind { color: #8d9688; font: 9px var(--mono); letter-spacing: .8px; }
+    .app-content { display: flex; flex: 1; flex-direction: column; padding-top: 18px; }
+    .app-desc { margin: 0 0 18px; color: #9fa79b; font-size: 11px; }
+    label { color: #aeb5a9; font: 9px var(--mono); }
+    input, select, textarea { width: 100%; color: var(--paper); border: 1px solid #454d41; border-radius: 4px; background: #191d18; }
+    input, select { height: 39px; padding: 0 10px; }
+    .calc-row { display: grid; grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr); align-items: end; gap: 8px; }
+    .field { display: grid; gap: 7px; }
+    .calc-result { min-height: 56px; display: flex; align-items: center; justify-content: space-between; margin-top: 17px; padding: 0 12px; border: 1px solid #3d4737; border-radius: 4px; background: #252b22; }
+    .calc-result span { color: #aab19f; font: 9px var(--mono); }
+    .calc-result output { color: var(--lime); font: 19px var(--mono); }
+    .action-button { min-height: 38px; margin-top: 12px; border: 0; border-radius: 4px; background: var(--lime); color: var(--ink); font-size: 11px; font-weight: 700; cursor: pointer; }
+    .action-button:hover { background: #e4ff91; }
+    .timer-display { display: grid; place-items: center; flex: 1; min-height: 129px; color: var(--aqua); font: 36px var(--mono); font-variant-numeric: tabular-nums; }
+    .timer-display small { display: block; margin-top: 7px; color: #9fa79b; font: 9px var(--mono); text-align: center; }
+    .timer-settings { display: grid; grid-template-columns: 1fr 94px; align-items: center; gap: 12px; margin-top: 10px; }
+    .timer-settings label { line-height: 1.6; }
+    .timer-actions { display: flex; gap: 8px; }
+    .timer-actions button { flex: 1; min-height: 36px; border: 1px solid #485247; border-radius: 4px; background: #292f29; color: var(--paper); font: 10px var(--mono); cursor: pointer; }
+    .timer-actions button:first-child { border-color: #73e5d15c; color: var(--aqua); }
+    .timer-actions button:hover { border-color: var(--aqua); }
+    .notes textarea { flex: 1; min-height: 198px; resize: vertical; padding: 12px; font: 12px/1.6 var(--display); }
+    .note-status { display: flex; justify-content: space-between; margin-top: 10px; color: #8c9588; font: 9px var(--mono); }
+    footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 27px; padding-top: 15px; border-top: 1px solid var(--line); color: #788076; font: 9px var(--mono); }
+    @media (max-width: 850px) { .page { padding-right: 24px; padding-left: 24px; } .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 580px) { .page { padding-right: 15px; padding-left: 15px; } .topbar { height: 62px; } .hero { align-items: flex-start; flex-direction: column; padding-top: 32px; } .hero-note { max-width: none; text-align: left; } .app-grid { grid-template-columns: 1fr; gap: 10px; } .app { min-height: 345px; } footer { flex-direction: column; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>NICO<small>UNBLOCKED GAMES</small></span></a>
+      <a class="back-link" href="index.html">GAMES ↗</a>
+    </header>
+    <section class="hero">
+      <div><div class="eyebrow">A FEW HANDY THINGS</div><h1>Apps, at your service.</h1></div>
+      <div class="hero-note">Little browser tools for the spaces between your next big plans.</div>
+    </section>
+    <section class="app-grid" aria-label="Apps">
+      <article class="app calculator">
+        <header class="app-head"><div class="app-title"><span class="app-icon" aria-hidden="true">＋</span>Quick calc</div><span class="app-kind">CALCULATOR</span></header>
+        <div class="app-content">
+          <p class="app-desc">A simple four-function calculator.</p>
+          <div class="calc-row">
+            <label class="field">FIRST NUMBER<input id="first-number" type="number" step="any" value="24"></label>
+            <label class="field">OP<input id="operation" type="text" value="+" list="operations" aria-label="Operation" autocomplete="off"></label>
+            <datalist id="operations"><option value="+"><option value="−"><option value="×"><option value="÷"></datalist>
+            <label class="field">SECOND NUMBER<input id="second-number" type="number" step="any" value="18"></label>
+          </div>
+          <div class="calc-result"><span>RESULT</span><output id="calc-result" aria-live="polite">42</output></div>
+          <button class="action-button" id="calculate">CALCULATE</button>
+        </div>
+      </article>
+      <article class="app timer">
+        <header class="app-head"><div class="app-title"><span class="app-icon" aria-hidden="true">◷</span>Focus timer</div><span class="app-kind">TIMEKEEPER</span></header>
+        <div class="app-content">
+          <p class="app-desc">Set a pocket of time and get into it.</p>
+          <div class="timer-display"><div><span id="timer-clock">05:00</span><small id="timer-status" aria-live="polite">READY WHEN YOU ARE</small></div></div>
+          <div class="timer-settings"><label for="timer-minutes">SESSION LENGTH IN MINUTES</label><input id="timer-minutes" type="number" min="1" max="180" value="5"></div>
+          <div class="timer-actions"><button id="timer-start">START</button><button id="timer-reset">RESET</button></div>
+        </div>
+      </article>
+      <article class="app notes">
+        <header class="app-head"><div class="app-title"><span class="app-icon" aria-hidden="true">✎</span>Quick notes</div><span class="app-kind">SCRATCHPAD</span></header>
+        <div class="app-content">
+          <p class="app-desc">A thought worth keeping. Saved on this device.</p>
+          <textarea id="notes" placeholder="Start typing..." aria-label="Your notes"></textarea>
+          <div class="note-status"><span id="note-status" aria-live="polite">SAVED LOCALLY</span><button id="clear-notes" type="button" style="border:0;background:none;color:var(--coral);font:inherit;cursor:pointer">CLEAR NOTES</button></div>
+        </div>
+      </article>
+      <a class="app webretro" href="webretro/roms.html" aria-label="Open WebRetro game library">
+        <header class="app-head"><div class="app-title"><span class="app-icon" aria-hidden="true">▰</span>Retro arcade</div><span class="app-kind">WEBRETRO</span></header>
+        <div class="retro-cover"><img src="Neon%20Web%20Retro%20Banner.png" alt="Neon Web Retro banner"></div>
+        <div class="retro-foot"><div><strong>Pick a classic and play.</strong><small>Choose a game from the library.</small></div><span class="retro-launch">OPEN ↗</span></div>
+      </a>
+      <a class="app webretro soundboard" href="soundboard/index.html" aria-label="Open Soundboard">
+        <header class="app-head"><div class="app-title"><span class="app-icon" aria-hidden="true">♫</span>Soundboard</div><span class="app-kind">SOUND EFFECTS</span></header>
+        <div class="retro-cover"><img src="soundboard.avif" alt="Soundboard banner"></div>
+        <div class="retro-foot"><div><strong>Play a sound for every moment.</strong><small>Browse and play sound effects.</small></div><span class="retro-launch">OPEN ↗</span></div>
+      </a>
+    </section>
+    <footer><span>BUILT FOR THE IN-BETWEEN</span><span>YOUR NOTES STAY ON THIS DEVICE</span></footer>
+  </main>
+  <script>
+    const firstNumber = document.getElementById('first-number');
+    const secondNumber = document.getElementById('second-number');
+    const operation = document.getElementById('operation');
+    const calcOutput = document.getElementById('calc-result');
+
+    document.getElementById('calculate').addEventListener('click', () => {
+      const first = Number(firstNumber.value);
+      const second = Number(secondNumber.value);
+      const operations = { '+': (a, b) => a + b, '−': (a, b) => a - b, '-': (a, b) => a - b, '×': (a, b) => a * b, '*': (a, b) => a * b, '÷': (a, b) => b === 0 ? NaN : a / b, '/': (a, b) => b === 0 ? NaN : a / b };
+      const calculate = operations[operation.value.trim()];
+      const result = calculate && Number.isFinite(first) && Number.isFinite(second) ? calculate(first, second) : NaN;
+      calcOutput.textContent = Number.isFinite(result) ? String(Number(result.toPrecision(10))) : 'CHECK INPUT';
+    });
+
+    const timerMinutes = document.getElementById('timer-minutes');
+    const timerClock = document.getElementById('timer-clock');
+    const timerStatus = document.getElementById('timer-status');
+    const timerStart = document.getElementById('timer-start');
+    let remainingSeconds = null;
+    let timerInterval = null;
+
+    function renderTimer() {
+      const total = remainingSeconds ?? Math.max(1, Number(timerMinutes.value) || 1) * 60;
+      timerClock.textContent = `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`;
+    }
+
+    timerMinutes.addEventListener('input', () => {
+      if (timerInterval === null) { remainingSeconds = null; renderTimer(); }
+    });
+
+    timerStart.addEventListener('click', () => {
+      if (timerInterval !== null) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        timerStart.textContent = 'RESUME';
+        timerStatus.textContent = 'PAUSED';
+        return;
+      }
+      if (remainingSeconds === null) {
+        const minutes = Number(timerMinutes.value);
+        if (!Number.isFinite(minutes) || minutes < 1 || minutes > 180) {
+          timerStatus.textContent = 'CHOOSE 1–180 MINUTES';
+          return;
+        }
+        remainingSeconds = Math.round(minutes * 60);
+      }
+      timerStart.textContent = 'PAUSE';
+      timerStatus.textContent = 'FOCUS TIME';
+      timerInterval = setInterval(() => {
+        remainingSeconds -= 1;
+        renderTimer();
+        if (remainingSeconds <= 0) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          timerStart.textContent = 'START AGAIN';
+          remainingSeconds = null;
+          timerStatus.textContent = 'TIME IS UP';
+        }
+      }, 1000);
+    });
+
+    document.getElementById('timer-reset').addEventListener('click', () => {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      remainingSeconds = null;
+      timerStart.textContent = 'START';
+      timerStatus.textContent = 'READY WHEN YOU ARE';
+      renderTimer();
+    });
+
+    const notes = document.getElementById('notes');
+    const noteStatus = document.getElementById('note-status');
+    notes.value = localStorage.getItem('sidequest-notes') || '';
+    notes.addEventListener('input', () => {
+      localStorage.setItem('sidequest-notes', notes.value);
+      noteStatus.textContent = 'SAVED LOCALLY';
+    });
+    document.getElementById('clear-notes').addEventListener('click', () => {
+      notes.value = '';
+      localStorage.removeItem('sidequest-notes');
+      noteStatus.textContent = 'CLEARED';
+      notes.focus();
+    });
+    renderTimer();
+  </script>
+</body>
+</html>
