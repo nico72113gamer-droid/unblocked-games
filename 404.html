@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b5794">
+  <title>Page Not Found · Nico Unblocked Games</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      color: #173c60;
+      background: #1b5794;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(ellipse at 82% 18%, #91d6f5 0, transparent 35%),
+        radial-gradient(ellipse at 18% 83%, #2c83c5 0, transparent 42%),
+        linear-gradient(135deg, #123f70, #247bb4 53%, #8ec6e4);
+    }
+    a:focus-visible { outline: 3px solid #17699f; outline-offset: 3px; }
+    .window {
+      width: min(560px, 100%);
+      overflow: hidden;
+      border: 1px solid #a9c7df;
+      border-radius: 8px;
+      background: linear-gradient(145deg, #fff, #edf6fc);
+      box-shadow: 0 22px 65px #06274699, inset 0 1px #fff;
+    }
+    .titlebar {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 8px 16px;
+      border-bottom: 1px solid #8cb8d8;
+      background: linear-gradient(115deg, #eaf8ff, #92c8e8 48%, #d7edfa);
+      box-shadow: inset 0 1px #fff;
+      color: #173c60;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .orb {
+      width: 25px;
+      height: 25px;
+      flex: 0 0 auto;
+      border: 1px solid #ffffffb8;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 25%, #f5fff0 0, #9be477 34%, #39a52c 72%, #17652c 100%);
+      box-shadow: 0 0 0 2px #ffffff42, 0 2px 6px #092f4f55;
+    }
+    .content { padding: clamp(26px, 7vw, 42px); }
+    .error-code { margin: 0; color: #2879bd; font-size: clamp(64px, 16vw, 96px); line-height: .95; font-weight: 300; }
+    h1 { margin: 12px 0 10px; color: #173c60; font-size: clamp(23px, 5vw, 30px); font-weight: 500; }
+    p { margin: 0; color: #58738c; font-size: 15px; line-height: 1.65; }
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 27px; }
+    .button {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 17px;
+      border: 1px solid #7da8cc;
+      border-radius: 4px;
+      background: linear-gradient(#fff, #dcecf8 48%, #c2dced);
+      box-shadow: inset 0 1px #fff, 0 1px 2px #244e7033;
+      color: #174e7e;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .button.primary {
+      border-color: #278a2d;
+      background: linear-gradient(#c9f39c, #78c34b 48%, #4b9d36);
+      color: #123d22;
+    }
+    .button:hover { border-color: #3787c5; filter: brightness(1.04); }
+    .button.primary:hover { border-color: #278a2d; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="window">
+    <header class="titlebar"><span class="orb" aria-hidden="true"></span>Nico Unblocked Games</header>
+    <section class="content" aria-labelledby="page-title">
+      <p class="error-code" aria-hidden="true">404</p>
+      <h1 id="page-title">We couldn't find that page.</h1>
+      <p>The page may have moved, or the address might be mistyped. Head back to the game shelf and find something to play.</p>
+      <nav class="actions" aria-label="Page navigation">
+        <a class="button primary" href="index.html">Back to games</a>
+        <a class="button" href="apps.html">Open apps</a>
+      </nav>
+    </section>
+  </main>
+</body>
+</html>
