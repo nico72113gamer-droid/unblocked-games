@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#171a16">
+  <meta name="theme-color" content="#1b5794">
   <title>Apps · Nico Unblocked Games</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
@@ -83,6 +83,107 @@
     @media (max-width: 850px) { .page { padding-right: 24px; padding-left: 24px; } .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 580px) { .page { padding-right: 15px; padding-left: 15px; } .topbar { height: 62px; } .hero { align-items: flex-start; flex-direction: column; padding-top: 32px; } .hero-note { max-width: none; text-align: left; } .app-grid { grid-template-columns: 1fr; gap: 10px; } .app { min-height: 345px; } footer { flex-direction: column; } }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+    :root {
+      color-scheme: light;
+      --ink: #173c60;
+      --panel: #f7fbff;
+      --line: #a9c5df;
+      --paper: #183650;
+      --muted: #58738c;
+      --lime: #67b83d;
+      --coral: #d65b49;
+      --aqua: #1687ad;
+      --blue: #2879bd;
+      --mono: 'Segoe UI', sans-serif;
+      --display: 'Segoe UI', sans-serif;
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 82% 18%, #91d6f5 0, transparent 35%),
+        radial-gradient(ellipse at 18% 83%, #2c83c5 0, transparent 42%),
+        linear-gradient(135deg, #123f70, #247bb4 53%, #8ec6e4);
+      color: var(--paper);
+      font-family: var(--display);
+    }
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline-color: #1684d0; }
+    .page {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #f8fcffed, #eaf5fbe8);
+      box-shadow: 0 0 34px #0b31514a, inset 0 1px #fff;
+    }
+    .topbar { border-color: #abc6dc; }
+    .brand { color: #1c4567; }
+    .brand small { color: #58738c; }
+    .brand-mark {
+      border: 1px solid #ffffffb8;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 25%, #f5fff0 0, #9be477 34%, #39a52c 72%, #17652c 100%);
+      box-shadow: 0 0 0 2px #ffffff42, 0 2px 7px #092f4f55;
+    }
+    .back-link {
+      border-color: #7da8cc;
+      background: linear-gradient(#fff, #dcecf8 48%, #c2dced);
+      box-shadow: inset 0 1px #fff, 0 1px 2px #244e7033;
+      color: #174e7e;
+    }
+    .back-link:hover { border-color: #3787c5; background: linear-gradient(#fff, #d2eaff); }
+    .eyebrow { color: #1677ac; }
+    .hero-note { color: #5b7891; }
+    .app {
+      border-color: #a9c5dc;
+      border-radius: 6px;
+      background: linear-gradient(145deg, #ffffff, #edf5fb);
+      box-shadow: 0 3px 10px #244e7024, inset 0 1px #fff;
+    }
+    .app:hover { border-color: #6ea5ce; box-shadow: 0 6px 15px #244e7035, inset 0 1px #fff; }
+    .app-head { border-color: #d1e1ed; }
+    .app-title { color: #1c4567; }
+    .app-kind, .note-status { color: #607c94; }
+    .app-desc, .retro-foot small { color: #58738c; }
+    .app-icon { border: 1px solid #aac5da; border-radius: 5px; background: linear-gradient(#fafdff, #dcecf8) !important; }
+    .calculator .app-icon { color: #39863b; }
+    .timer .app-icon { color: #14799f; }
+    .notes .app-icon, .soundboard .app-icon { color: #c95343; }
+    .webretro .app-icon { color: #2879bd; }
+    label { color: #42637f; }
+    input, select, textarea {
+      border-color: #9ab8d1;
+      border-radius: 3px;
+      background: linear-gradient(#fff, #f5faff);
+      box-shadow: inset 0 1px 2px #365b7622;
+      color: #183650;
+    }
+    .calc-result {
+      border-color: #a8c4d9;
+      border-radius: 4px;
+      background: linear-gradient(#fafdff, #deedf7);
+      box-shadow: inset 0 1px #fff;
+    }
+    .calc-result span { color: #58738c; }
+    .calc-result output { color: #39863b; }
+    .action-button {
+      border: 1px solid #278a2d;
+      border-radius: 4px;
+      background: linear-gradient(#c9f39c, #78c34b 48%, #4b9d36);
+      box-shadow: inset 0 1px #f4ffe6, 0 2px 4px #244e7026;
+      color: #123d22;
+    }
+    .action-button:hover { background: linear-gradient(#dcffbb, #8bd65b 48%, #5aaa3b); }
+    .timer-display { color: #14799f; }
+    .timer-display small { color: #58738c; }
+    .timer-actions button {
+      border-color: #9bb9d1;
+      border-radius: 3px;
+      background: linear-gradient(#fff, #e3f0f9);
+      color: #244e70;
+    }
+    .timer-actions button:first-child { border-color: #82b8cf; color: #14799f; }
+    .timer-actions button:hover { border-color: #4387b7; color: #17699f; }
+    .retro-cover { background: #dcebf6; }
+    .retro-foot strong { color: #1c4567; }
+    .retro-launch { color: #2879bd; }
+    footer { border-color: #abc6dc; color: #57738b; }
   </style>
 </head>
 <body>
